@@ -1,0 +1,13 @@
+var express = require('express')
+var path = require('path')
+var logger = require('morgan')
+var cookieParser = require('cookie-parser')
+var session = require('express-session')
+var passport = require('passport')
+var methodOverride = require('method-override')
+const indexRoutes = require('./routes/index')
+const usersRoutes = require('./routes/users')
+const chakralRoutes = require('./routes/chakras')
+const crystalRoutes = require('./routes/crystals')
+
+require('dotenv').config()

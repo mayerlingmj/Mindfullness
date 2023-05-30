@@ -10,7 +10,8 @@ const chakraSchema = new mongoose.Schema({
   userCreated: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   usersAddedToCollection: [
     { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
-  ]
+  ],
+  crystals: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Crystal' }]
 })
 
 module.exports = mongoose.model('Chakra', chakraSchema)
