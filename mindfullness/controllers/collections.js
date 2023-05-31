@@ -83,6 +83,6 @@ function create(req, res) {
   collection.save(function (err) {
     if (err) console.log(err)
   })
-  es.redirect('/chakras')
+  res.redirect('/chakras')
   res.redirect('/crystals')
 }
