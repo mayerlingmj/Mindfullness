@@ -29,3 +29,15 @@ async function removeFromCollection(req, res) {
     res.send(err)
   }
 }
+
+function edit(req, res) {
+  Collection.findById(req.params.id)
+    .populate('crystalsAdded')
+    .exec(function (err, collection) {
+      if (!collection.userId.equals(req.user._id)) {
+        res.redirect('/')
+      } else {
+        res.render('collections/edit', { collection })
+      }
+    })
+}
