@@ -36,3 +36,20 @@ function newCrystal(req, res) {
     })
   }
 }
+function create(req, res) {
+  const n = req.body.name
+  req.body.name = n.toLowerCase()
+  if (req.user === undefined) {
+    res.redirect('/')
+  } else {
+    Crystal.create(req.body, function (err, createdCrystal) {
+      if (err) {
+        return res.redirect('/crystals/new')
+      }
+      createdCrystal.userCreated = req.user._id
+      createdCrystal.save(function (err) {
+        res.redirect('/crystals')
+      })
+    })
+  }
+}
