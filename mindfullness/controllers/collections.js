@@ -58,3 +58,20 @@ async function update(req, res) {
     res.send(err)
   }
 }
+
+async function deleteCollection(req, res) {
+  try {
+    const collection = await Collection.findById(req.params.id)
+    if (!collection.userId.equals(req.user._id)) {
+      res.redirect('/')
+    } else {
+      collection.remove()
+      collection.save(function (err) {
+        res.redirect(`/chakras/${req.user._id}/collections`)
+        res.redirect(`/crystals/${req.user._id}/collections`)
+      })
+    }
+  } catch (err) {
+    res.send(err)
+  }
+}
