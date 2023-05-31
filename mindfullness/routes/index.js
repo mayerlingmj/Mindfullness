@@ -11,5 +11,14 @@ router.get(
   '/oauth/google',
   passport.authenticate('google', { scope: ['profile', 'email'] })
 )
+// Google OAuth callback route
+router.get(
+  '/oauth2callback',
+  passport.authenticate('google', {
+    successRedirect: '/crystals',
+    successRedirect: '/chakras',
+    failureRedirect: '/login'
+  })
+)
 
 module.exports = router
