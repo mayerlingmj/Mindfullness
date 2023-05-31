@@ -17,3 +17,13 @@ function addToCollection(req, res) {
     })
   })
 }
+function index(req, res) {
+  Chakra.find({}, function (err, chakraDocuments) {
+    res.render('crystals/home', {
+      chakras: chakraDocuments
+    })
+  })
+  if (req.user === undefined) {
+    res.redirect('/')
+  }
+}
