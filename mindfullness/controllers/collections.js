@@ -75,3 +75,14 @@ async function deleteCollection(req, res) {
     res.send(err)
   }
 }
+
+function create(req, res) {
+  const collection = new Collection(req.body)
+  collection.userId = req.user._id
+  collection.userName = req.user.name
+  collection.save(function (err) {
+    if (err) console.log(err)
+  })
+  es.redirect('/chakras')
+  res.redirect('/crystals')
+}
