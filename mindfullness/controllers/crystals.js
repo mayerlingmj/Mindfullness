@@ -27,3 +27,12 @@ function index(req, res) {
     res.redirect('/')
   }
 }
+function newCrystal(req, res) {
+  if (req.user === undefined) {
+    res.redirect('/')
+  } else {
+    res.render('crystals/new', {
+      title: 'New Crystal'
+    })
+  }
+}
