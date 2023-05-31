@@ -33,6 +33,7 @@ async function removeFromCollection(req, res) {
 function edit(req, res) {
   Collection.findById(req.params.id)
     .populate('crystalsAdded')
+    .populate('chakrasAdded')
     .exec(function (err, collection) {
       if (!collection.userId.equals(req.user._id)) {
         res.redirect('/')
@@ -96,6 +97,19 @@ async function index(req, res) {
     res.render('collections/index', {
       collections,
       title: 'Chakra Crystal'
+    })
+  } catch (err) {
+    res.send(err)
+  }
+}
+
+async function show(req, res) {
+  try {
+    const collection = await Collection.findById(req.params.id)
+      .populate('crystalsAdded')
+      .populate('chakrasAdded')
+    res.render('collections/show', {
+      collection
     })
   } catch (err) {
     res.send(err)
