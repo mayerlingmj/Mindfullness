@@ -53,3 +53,24 @@ function create(req, res) {
     })
   }
 }
+async function show(req, res) {
+  if (req.user === undefined) {
+    res.redirect('/')
+  }
+  try {
+    const crystal = await Crystal.findById(req.params.id).populate(
+      'userCreated'
+    )
+    const collections = await Collection.find({
+      userId: req.user._id,
+      crystalsAdded: { $nin: req.params.id }
+    })
+    res.render('crystals/show', {
+      title: 'more about: ',
+      crystal,
+      collections
+    })
+  } catch (err) {
+    res.send(err)
+  }
+}
