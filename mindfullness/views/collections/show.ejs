@@ -1,0 +1,16 @@
+<%- include('../partials/header')  %> 
+<h2 class="cc-head"><%= collection.name %></h2>
+    <div class="extra">
+        <a href='/collections/<%= collection._id %>/edit'><p>edit your collection</p></a>
+    </div>
+    <div class="cc-show">CURRENT SELECTION:</div>
+    <div class="cc-show">
+        <ul>
+          <% collection.chakrasAdded.forEach(c => { %>
+            <% collection.crystalsAdded.forEach(c => { %>
+             <li class="cc-show"><a href='/crystals/chakras/<%= c._id %>' class="cc-show"><%= c.name %></a></li>
+             <% }) %>
+        </ul>
+    </div>
+</body>
+</html>
