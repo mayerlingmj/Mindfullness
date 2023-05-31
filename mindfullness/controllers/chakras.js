@@ -27,3 +27,12 @@ function index(req, res) {
     res.redirect('/')
   }
 }
+function newChakra(req, res) {
+  if (req.user === undefined) {
+    res.redirect('/')
+  } else {
+    res.render('chakras/new', {
+      title: 'New Chakra'
+    })
+  }
+}
