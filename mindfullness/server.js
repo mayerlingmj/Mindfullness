@@ -6,8 +6,8 @@ var logger = require('morgan')
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
-const chakralRoutes = require('./mindfullness/routes/chakras')
-const crystalRoutes = require('./mindfullness/routes/crystals')
+const chakralRoutes = require('./routes/chakras')
+const crystalRoutes = require('./routes/crystals')
 
 require('dotenv').config()
 

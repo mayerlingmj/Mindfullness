@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const chakraCtrl = require
+const chakraCtrl = require('../controllers/chakras')
 
 router.get('/chakras', chakraCtrl.index)
 router.get('/chakras/new', isLoggedIn, chakraCtrl.new)
