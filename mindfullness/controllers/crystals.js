@@ -17,3 +17,13 @@ function addToCollection(req, res) {
     })
   })
 }
+function index(req, res) {
+  Crystal.find({}, function (err, crystalDocuments) {
+    res.render('crystals/home', {
+      crystals: crystalDocuments
+    })
+  })
+  if (req.user === undefined) {
+    res.redirect('/')
+  }
+}
