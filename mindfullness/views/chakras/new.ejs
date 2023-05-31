@@ -1,0 +1,15 @@
+<%- include('../partials/header')  %> 
+    <p>WARNING: make sure chakra has not already been shared to our collection!</p>
+    <form id="new-form" action="/chakras" method="POST">
+        <label>name of chakra:</label>
+        <input type="text" name="name" required>
+        <label>variety/color:</label>
+        <input type="text" name="color" required>
+        <label>description:</label>
+        <input type="text" name="description" placeholder="Please include what it is known to be useful for, fascinating facts about it, and any background information about its origin.">
+        <label>picture:</label>
+        <input type="text" name="image" placeholder="image address only" required>
+        <input type="submit" value="+ + +">
+    </form>
+    </body>
+</html>

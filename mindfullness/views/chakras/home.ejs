@@ -1,0 +1,17 @@
+<%- include('../partials/header')  %> 
+<form id="new-collection" action="/chakras/<%= user._id %>/collection" method="POST">
+<div id="new">
+    <p>CREATE A COLLECTION:</p>
+    <input type="text" name="name" placeholder="name" required>
+    <input type="submit" value="+ + +">
+</div>
+</form>
+<div class="container">
+    <% crystals.forEach(c => { %>
+        <div class="new-chakra">
+            <a href="/chakra/<%= c._id %>"><img src=<%= c.image %>>
+            <h6><%= c.name %> </h6></a>
+        </div>
+    <% }) %>
+</body>
+</html>
