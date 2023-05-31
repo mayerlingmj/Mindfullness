@@ -36,3 +36,20 @@ function newChakra(req, res) {
     })
   }
 }
+function create(req, res) {
+  const n = req.body.name
+  req.body.name = n.toLowerCase()
+  if (req.user === undefined) {
+    res.redirect('/')
+  } else {
+    Chakra.create(req.body, function (err, createdChakra) {
+      if (err) {
+        return res.redirect('/chakras/new')
+      }
+      createdChakra.userCreated = req.user._id
+      createdChakra.save(function (err) {
+        res.redirect('/chakras')
+      })
+    })
+  }
+}
