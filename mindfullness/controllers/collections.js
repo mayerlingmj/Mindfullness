@@ -86,3 +86,18 @@ function create(req, res) {
   res.redirect('/chakras')
   res.redirect('/crystals')
 }
+
+async function index(req, res) {
+  if (req.user === undefined) {
+    res.redirect('/')
+  }
+  try {
+    const collections = await Collection.find({ userId: req.user._id })
+    res.render('collections/index', {
+      collections,
+      title: 'Chakra Crystal'
+    })
+  } catch (err) {
+    res.send(err)
+  }
+}
