@@ -3,9 +3,11 @@ var express = require('express')
 var path = require('path')
 var cookieParser = require('cookie-parser')
 var logger = require('morgan')
-
-var indexRouter = require('./routes/index')
-var usersRouter = require('./routes/users')
+var session = require('express-session')
+var passport = require('passport')
+var methodOverride = require('method-override')
+const indexRouter = require('./routes/index')
+const usersRouter = require('./routes/users')
 const chakralRoutes = require('./routes/chakras')
 const crystalRoutes = require('./routes/crystals')
 
@@ -14,7 +16,7 @@ require('dotenv').config()
 var app = express()
 
 // connect to the MongoDB with mongoose
-require('./config/database')
+require('./config/database.js')
 // configure Passport
 require('./config/passport')
 
