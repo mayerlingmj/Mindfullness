@@ -21,6 +21,10 @@ async function removeFromCollection(req, res) {
     collectionDoc.save(function (err) {
       res.redirect(`/collections/${collectionDoc._id}/edit`)
     })
+    collectionDoc.crystalsAdded.remove(req.params.crystalId)
+    collectionDoc.save(function (err) {
+      res.redirect(`/collections/${collectionDoc._id}/edit`)
+    })
   } catch (err) {
     res.send(err)
   }
