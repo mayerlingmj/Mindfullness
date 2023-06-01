@@ -1,6 +1,5 @@
 const Chakra = require('../models/chakra')
 const Collection = require('../models/collection')
-const User = require('../models/user')
 
 module.exports = {
   index,
@@ -17,16 +16,11 @@ function addToCollection(req, res) {
     })
   })
 }
-function index(req, res) {
-  Chakra.find({}, function (err, chakraDocuments) {
-    res.render('crystals/home', {
-      chakras: chakraDocuments
-    })
-  })
-  if (req.user === undefined) {
-    res.redirect('/')
-  }
+async function index(req, res) {
+  const chakras = await Chakra.find()
+  res.render('chakras/home', { chakras })
 }
+
 function newChakra(req, res) {
   if (req.user === undefined) {
     res.redirect('/')

@@ -1,6 +1,5 @@
 const Crystal = require('../models/crystal')
 const Collection = require('../models/collection')
-const User = require('../models/user')
 
 module.exports = {
   index,
@@ -17,15 +16,9 @@ function addToCollection(req, res) {
     })
   })
 }
-function index(req, res) {
-  Crystal.find({}, function (err, crystalDocuments) {
-    res.render('crystals/home', {
-      crystals: crystalDocuments
-    })
-  })
-  if (req.user === undefined) {
-    res.redirect('/')
-  }
+async function index(req, res) {
+  const crystals = await Crystal.find()
+  res.render('crystals/home', { crystals })
 }
 function newCrystal(req, res) {
   if (req.user === undefined) {

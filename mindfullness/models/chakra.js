@@ -7,9 +7,9 @@ const chakraSchema = new mongoose.Schema({
   color: String,
   description: String,
   image: String,
-  userCreated: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  userCreated: { type: mongoose.Schema.Types.ObjectId },
   usersAddedToCollection: [
-    { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+    { type: mongoose.Schema.Types.ObjectId, ref: 'chakra' }
   ],
   crystals: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Crystal' }]
 })

@@ -3,19 +3,17 @@ var path = require('path')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
 // session middleware
-var session = require('express-session')
 var passport = require('passport')
-var methodOverride = require('method-override')
+const session = require('express-session')
 const indexRoutes = require('./routes/index')
-const usersRoutes = require('./routes/users')
 const chakraRoutes = require('./routes/chakras')
 const crystalRoutes = require('./routes/crystals')
 const collectionRoutes = require('./routes/collections')
-// load the env vars
+
 require('dotenv').config()
 
 // create the Express app
-var app = express()
+const app = express()
 
 // connect to the MongoDB with mongoose
 require('./config/database')
@@ -25,22 +23,19 @@ require('./config/passport')
 // view engine setup
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
-
-app.use(methodOverride('_method'))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-// mount the session middleware
+
 app.use(
   session({
-    secret: 'SEI Rocks!',
+    secret: 'SEI Group 1 Rocks!',
     resave: false,
     saveUninitialized: true
   })
 )
-
 app.use(passport.initialize())
 app.use(passport.session())
 
@@ -51,7 +46,6 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes)
-app.use('/', usersRoutes)
 app.use('/', crystalRoutes)
 app.use('/', collectionRoutes)
 
