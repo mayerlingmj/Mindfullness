@@ -24,5 +24,6 @@ async function create(req, res) {
 
 async function show(req, res) {
   const chakra = await Chakra.findById(req.params.id)
+  console.log(chakra)
   res.render('chakras/show', { title: 'More About', chakra })
 }
