@@ -1,10 +1,10 @@
+var express = require('express')
 const router = require('express').Router()
-const chakraCtrl = require('../controllers/chakras')
+const chakrasCtrl = require('../controllers/chakras')
 const isLoggedIn = require('../config/isLoggedin')
-router.get('/chakras', chakraCtrl.index)
-router.get('/chakras/new', isLoggedIn, chakraCtrl.new)
-router.post('/chakras', isLoggedIn, chakraCtrl.create)
-router.get('/chakras/:id', chakraCtrl.show)
-router.post('/chakras/:id', isLoggedIn, chakraCtrl.addToCollection)
+router.get('/', chakrasCtrl.index)
+router.get('/new', chakrasCtrl.new)
+router.get('/:id', chakrasCtrl.show)
+router.post('/', chakrasCtrl.create)
 
 module.exports = router

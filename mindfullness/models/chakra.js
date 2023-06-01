@@ -1,17 +1,40 @@
 const mongoose = require('mongoose')
+// optional shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema
 
-//need to have many different chakras belonging to many users
+const crystalSchema = new Schema(
+  {
+    crystal: {
+      type: String,
+      required: true
+    }
+  },
+  {
+    timestamps: true
+  }
+)
 
-const chakraSchema = new mongoose.Schema({
-  name: String,
-  color: String,
-  description: String,
-  image: String,
-  userCreated: { type: mongoose.Schema.Types.ObjectId },
-  usersAddedToCollection: [
-    { type: mongoose.Schema.Types.ObjectId, ref: 'chakra' }
-  ],
-  crystals: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Crystal' }]
-})
+const chakraSchema = new Schema(
+  {
+    location: {
+      type: String,
+      enum: [
+        'THROAT',
+        'CROWN',
+        'HEART',
+        'THIRD EYE',
+        'SOLAR PLEXUS',
+        'SACRAL',
+        'ROOT'
+      ]
+    }
+  },
+  {
+    crystals: [crystalSchema]
+  },
+  {
+    timestamps: true
+  }
+)
 
 module.exports = mongoose.model('Chakra', chakraSchema)

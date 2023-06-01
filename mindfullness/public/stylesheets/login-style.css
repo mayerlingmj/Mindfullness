@@ -1,0 +1,48 @@
+* {
+  box-sizing:border-box;
+  text-align: center;
+  background: url('https://i.imgur.com/oiFyWLu.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  color: whitesmoke;
+}
+
+body {
+  display: grid;
+  margin: 0;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;
+  height: 100vh;
+
+}
+h1 {
+  font-family: 'Major Mono Display', monospace;
+  font-size: 3rem;
+}
+p {
+  font-family: 'Montserrat', sans-serif;
+}
+.flex-ctr {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(199, 40, 138);
+}
+img {
+  display: flex;
+  flex-direction: row;
+}
+#container {
+  width: 60vh;
+  background: rgb(133, 16, 86);
+}
+.login {
+  display: inline-flex;
+  background: whitesmoke;
+  color: rgb(223, 175, 213);
+  font-family: 'Montserrat', sans-serif;
+  padding: 5px;
+  line-height:29.6px;
+}

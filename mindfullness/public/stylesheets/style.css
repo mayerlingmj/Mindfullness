@@ -1,8 +1,86 @@
+*{
+  box-sizing: border-box;
+}
+.brand-logo {
+  margin-left: 15px;
+}
+
+.card .card-content .card-title {
+  margin-bottom: 10px;
+}
+
+#search-row form {
+  padding-top: 20px;
+}
+
+.student-name {
+  position: relative;
+  top: -5px;
+}
+
+.collection-item form {
+  margin-top: -5px;
+}
+
+.navbar-fixed nav .nav-wrapper {
+  font-family: 'Megrim';
+  background-color: rgb(243, 140, 208);
+}
+
+input[type=text] {
+  color: #bb6591;
+}
+
+input[type=submit]:hover {
+  transition: .2s ease-in-out;
+  background: black;
+  color: whitesmoke
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #272727;
+  color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p{
+  font-family: 'Montserrat', serif;
+  font-size: 1.5rem;
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  height: 250px;
+  text-align: center;
+  column-gap: 1.2rem;;
+  row-gap: 5rem;
+  padding-top: 27rem;
+  color: rgb(203, 30, 154);
+}
+
+.new-crystal{
+  height: 200px;
+}
+
+img {
+  height: 200px;
+  opacity: 0.5;
+  transition: .4s ease-in-out;
+  border-radius: 10%;
+}
+
+img.item-a {
+  height: 400px;
+}
+
+img:hover{
+  opacity: 1;
 }
 
 a {
-  color: #00B7FF;
+  color: #d9589b;
 }

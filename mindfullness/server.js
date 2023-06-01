@@ -8,7 +8,7 @@ const session = require('express-session')
 const indexRoutes = require('./routes/index')
 const chakraRoutes = require('./routes/chakras')
 const crystalRoutes = require('./routes/crystals')
-const collectionRoutes = require('./routes/collections')
+const createError = require('http-errors')
 
 require('dotenv').config()
 
@@ -46,9 +46,8 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes)
-app.use('/', chakraRoutes)
+app.use('/chakras', chakraRoutes)
 app.use('/', crystalRoutes)
-app.use('/', collectionRoutes)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
