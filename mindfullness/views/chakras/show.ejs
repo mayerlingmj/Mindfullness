@@ -8,7 +8,7 @@
         <div class="item-d">color/variety: <%= chakra.color %> </div>
         <div class="item-e"><%= chakra.description %></div>
         <div class="item-f">  
-            <form id="add-crys-to-coll" action="/chakras/<%= chakra._id %>" method="POST">
+            <form id="add-chakra-to-collection" action="/chakras/<%= chakras._id %>" method="POST">
                 <select class="browser-default" name="collectionId">
                     <% collections.forEach(c => { %>
                         <% if (c.name === undefined) { %>

@@ -1,6 +1,7 @@
 const Chakra = require('../models/chakra')
 const Crystal = require('../models/crystal')
 const Collection = require('../models/collection')
+const User = require('../models/user')
 
 module.exports = {
   create,
@@ -35,7 +36,7 @@ function edit(req, res) {
     .populate('crystalsAdded')
     .populate('chakrasAdded')
     .exec(function (err, collection) {
-      if (!collection.userId.equals(req.user._id)) {
+      if (!collection.collectionId.equals(req.collection._id)) {
         res.redirect('/')
       } else {
         res.render('collections/edit', { collection })

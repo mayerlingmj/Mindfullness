@@ -12,13 +12,13 @@
         <% if (collection.userId.equals(user._id)) { %>
         <form action='/collections/<%= collection._id %>/crystals/chakras/<%= c._id %>?_method=DELETE' method='POST'>
             <li class="cc-show">
-                <button type='submit' value='<%= c._id %>'class="cc-show">x</button><%= c.name %>
+                <button type='submit' value='<%= collections._id %>'class="cc-show">x</button><%= c.name %>
             <% } %>
          </li>
         <% }) %>
         </form>
     </ul>
-    <form action='/collections/<%= collection._id %>?_method=DELETE' method='POST'>
+    <form action='/collections/<%= collections._id %>?_method=DELETE' method='POST'>
         <button type='submit' name='delete'>delete entire collection</button>
     </form>
 

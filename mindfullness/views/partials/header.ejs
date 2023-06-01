@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRYSTAL CULTIQUE</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+ 
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" href="/stylesheets/show-style.css"/>
+    <link rel="stylesheet" href="/stylesheets/collections-style.css"/>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav>
+        <div class="nav-wrapper">
+            <a href="/crystals/chakras" class="brand-logo left">Mindfulness</a>
+            <ul class="right">
+                <% if (user) { %>
+                <li>
+                    <a href="/crystals/new">add to our collection!</a>
+                    <a href="/chakras/new">add to our collection!</a>
+                </li>
+                <li>
+                    <a href="/crystals/<%= user._id %>/collections">View All Collections</a>
+                    <a href="/chakras/<%= user._id %>/collections">View All Collections</a>
+                </li>
+                <li>
+                    <a href="/logout">Hi <%= user.name %>, Log Out</a>
+                <% } else { %>
+                    <a href="/oauth/google"> Login with Google</a>
+                <% } %>       
+                </li>
+            </ul>
+        </div>
+        </nav>
