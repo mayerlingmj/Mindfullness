@@ -1,18 +1,15 @@
 <%- include('../partials/header')  %> 
 <div class="container">
-    <% chakras.forEach(c => { %>
+    <% chakras.forEach(c => { %>....
       <tr>
         <td><%= c.location %></td>
-        <td><a href="/chakras/<%= c._id %>">DETAILS</a></td>
+        <td><a href="/chakras/<%= c._id %>"></a></td>
       </tr>
        
     <% }) %>
     <div class="new-chakra">
       <div id="new">
-          <p>Add Chakra:</p>
           <form>
-          <input type="text" name="name" placeholder="name" required>
-          <input type="submit" value="+ + +">
         </form>
         </div>
     
