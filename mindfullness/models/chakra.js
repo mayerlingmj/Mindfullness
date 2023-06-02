@@ -16,7 +16,7 @@ const crystalSchema = new Schema(
 
 const chakraSchema = new Schema(
   {
-    location: {
+    chakralist: {
       type: String,
       enum: [
         'THROAT',

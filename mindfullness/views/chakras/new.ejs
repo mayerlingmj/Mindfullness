@@ -1,14 +1,13 @@
 <%- include('../partials/header')  %> 
-    <p>WARNING: make sure chakra has not already been shared to our collection!</p>
+    <p>WARNING: make sure crystal has not already been added to the same chakra!</p>
     <form id="new-form" action="/chakras" method="POST">
-        <label>name of chakra:</label>
+        <label>name of Crystal:</label>
         <input type="text" name="name" required>
         <label>description:</label>
-        <input type="text" name="description" placeholder="Please include what it is known to be useful for, fascinating facts about it, and any background information about its origin.">
+        <input type="text" name="description">
         <label>picture:</label>
         <input type="text" name="image" placeholder="image address only" required>
-        <input type="submit" value="+ + +">
-        <label>LOCATION:
+<label>Chakra List:</label>
           <select name="location">
             <option value="THROAT">THROAT</option>
             <option value="CROWN">CROWN</option>
@@ -18,6 +17,7 @@
             <option value="SACRAL">SACRAL</option>
             <option value="ROOT">ROOT</option>
           </select>
+          <input type="submit" value="+ + +">
     </form>
     </body>
 </html>

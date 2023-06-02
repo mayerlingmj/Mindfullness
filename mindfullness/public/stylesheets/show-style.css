@@ -3,7 +3,7 @@
 }
 body {
   margin-right: 8rem;
-  color: whitesmoke;
+  color: rgb(129, 5, 88);
 }
 
 #show-container {
@@ -16,7 +16,7 @@ body {
 }
 
 .browser-default {
-  background-color: whitesmoke;
+  background-color: rgb(226, 177, 197);
   color: rgb(194, 136, 173);
   width: 23rem;
   height: 2rem;
@@ -77,11 +77,11 @@ img.item-a {
 button {
   display: inline-block;
   margin-top: 5px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Megrim';
 }
 
 button:hover {
   transition: .2s ease-in-out;
   background: rgb(213, 130, 182);
-  color: whitesmoke;
+  color: rgb(224, 142, 197);
 }

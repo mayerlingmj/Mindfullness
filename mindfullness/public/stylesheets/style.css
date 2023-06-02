@@ -1,51 +1,33 @@
 *{
   box-sizing: border-box;
 }
-.brand-logo {
-  margin-left: 15px;
-}
 
 .card .card-content .card-title {
   margin-bottom: 10px;
 }
 
-#search-row form {
-  padding-top: 20px;
-}
-
-.student-name {
-  position: relative;
-  top: -5px;
-}
-
-.collection-item form {
-  margin-top: -5px;
-}
-
 .navbar-fixed nav .nav-wrapper {
   font-family: 'Megrim';
-  background-color: rgb(243, 140, 208);
-}
+  .first ul{
+    text-align: left;
+  }
+  background-image: url(https://i.imgur.com/thVGLDf.jpg);
+  background-color: rgb(235, 205, 224);
 
-input[type=text] {
-  color: #bb6591;
-}
-
-input[type=submit]:hover {
-  transition: .2s ease-in-out;
-  background: black;
-  color: whitesmoke
 }
 
 body {
-  background: #272727;
-  color: whitesmoke;
-  font-family: 'Montserrat', sans-serif;
+  background: #ab5687;
+  background-image: url(https://i.imgur.com/FV6g85P.jpg);
+  color: rgb(172, 10, 110);
+  font-family: 'Megrim';
+  font-size: 2.1rem;
 }
 
 p{
-  font-family: 'Montserrat', serif;
-  font-size: 1.5rem;
+  font-family: 'Megrim';
+  font-size: 3.5rem;
+  color: #790147;
 }
 
 .container {
@@ -59,28 +41,16 @@ p{
   column-gap: 1.2rem;;
   row-gap: 5rem;
   padding-top: 27rem;
-  color: rgb(203, 30, 154);
+  color: rgb(97, 0, 58);
 }
 
 .new-crystal{
   height: 200px;
 }
 
-img {
-  height: 200px;
-  opacity: 0.5;
-  transition: .4s ease-in-out;
-  border-radius: 10%;
-}
-
-img.item-a {
-  height: 400px;
-}
-
-img:hover{
-  opacity: 1;
-}
 
 a {
-  color: #d9589b;
+  text-align: center;
+  color: #7a0150;
 }
+

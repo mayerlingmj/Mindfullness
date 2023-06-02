@@ -5,7 +5,8 @@ module.exports = {
   index,
   new: newChakra,
   create,
-  show
+  show,
+  deleteChakra
 }
 async function index(req, res) {
   const chakras = await Chakra.find()
@@ -26,4 +27,9 @@ async function show(req, res) {
   const chakra = await Chakra.findById(req.params.id)
   console.log(chakra)
   res.render('chakras/show', { title: 'More About', chakra })
+}
+async function deleteChakra(req, res, next) {
+  const chakra = await Chakra.findById(req.params.id)
+  console.log(chakra)
+  res.render('chakras/delete')
 }
