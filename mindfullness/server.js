@@ -2,6 +2,7 @@ var express = require('express')
 var path = require('path')
 var logger = require('morgan')
 var cookieParser = require('cookie-parser')
+var methodOverride = require('method-override')
 // session middleware
 var passport = require('passport')
 const session = require('express-session')
@@ -28,7 +29,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
-
+app.use(methodOverride('_method'))
 app.use(
   session({
     secret: 'Group 1 Is The Bomb!',
@@ -46,7 +47,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoutes)
-app.use('/chakras', chakraRoutes)
+app.use('/', chakraRoutes)
 app.use('/', crystalRoutes)
 
 // catch 404 and forward to error handler

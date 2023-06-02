@@ -1,0 +1,13 @@
+<%- include('../partials/header')  %> 
+    <p>WARNING: make sure crystal has not already been added to the same chakra!</p>
+    <form id="new-form" action='/crystals'method="POST">
+        <label>name of Crystal:</label>
+        <input type="text" name="name" required>
+        <label>description:</label>
+        <input type="text" name="description">
+        <label>picture:</label>
+        <input type="text" name="image" placeholder="image address only" required>
+          <input type="submit" value="+ + +">
+    </form>
+    </body>
+</html>

@@ -20,14 +20,18 @@
     <div class="navbar-fixed">
         <nav>
         <div class="nav-wrapper">
-            <a href="/chakras" class="brand-logo left">Mindfulness</a>
+            <a href="/crystals" class="brand-logo left">Mindfulness</a>
             <ul class="right">
                 <% if (user) { %>
                 <li>
-                    <a href="/chakras/new">Add to chakra!</a>
+                    <a href="/crystals/new">Add to crystal!</a>
                 </li>
                 <li>
-                    <a href="/chakras">View All Chakra</a>
+                    <a href="/chakras/new">Add to chakras!</a>
+                </li>
+                <li>
+                    <a href="/crystals">View All Crystals</a>
+    
                 </li>
                 <li>
                     <a href="/logout">Hi <%= user.name %>, Log Out</a>

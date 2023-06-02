@@ -1,14 +1,14 @@
 <%- include('../partials/header')  %> 
     <p>WARNING: make sure crystal has not already been added to the same chakra!</p>
-    <form id="new-form" action="/chakras" method="POST">
-        <label>name of Crystal:</label>
-        <input type="text" name="name" required>
-        <label>description:</label>
-        <input type="text" name="description">
-        <label>picture:</label>
-        <input type="text" name="image" placeholder="image address only" required>
+    <section id=“badge-container”>
+      <% chakras.forEach(function(c) { %>
+        <article class=“badge”><%= c.name %></article>
+      <% }) %>
+    </section>
+    <form id="new-form" action='/chakras'method="POST">
+    
 <label>Chakra List:</label>
-          <select name="location">
+          <!-- <select name="chakraList">
             <option value="THROAT">THROAT</option>
             <option value="CROWN">CROWN</option>
             <option value="HEART">HEART</option>
@@ -16,7 +16,8 @@
             <option value="SOLAR PLEXUS">SOLAR PLEXUS</option>
             <option value="SACRAL">SACRAL</option>
             <option value="ROOT">ROOT</option>
-          </select>
+          </select> -->
+          <input type="text" name="chakraList"> 
           <input type="submit" value="+ + +">
     </form>
     </body>

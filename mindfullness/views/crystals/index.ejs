@@ -1,11 +1,10 @@
 <%- include('../partials/header')  %> 
 <div class="container">
-    <% chakras.forEach(c => { %>....
+    <% crystals.forEach(c => { %>....
       <tr>
-        <td><%= c.location %></td>
-        <td><a href="/chakras/<%= c._id %>"></a></td>
+        <td><%= c.name %></td>
+        <td><a href="/crystals/<%= c._id %>">Crystal Details</a></td>
       </tr>
-       
     <% }) %>
     <div class="new-chakra">
       <div id="new">

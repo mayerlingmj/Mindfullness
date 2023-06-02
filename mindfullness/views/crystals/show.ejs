@@ -1,0 +1,29 @@
+<%- include('../partials/header')  %> 
+<div class="container">
+  
+        <%= crystal.name %>
+       <img src="<%= crystal.image %>" >
+        <%= crystal.description %>
+      
+   
+      <div id="new">
+         <ul> 
+          <%- crystal.chakras.map(c => 
+          `<li>${c.name}</li>`
+        ).join('') %>
+      </ul>
+        <form action="/crystals/<%=crystal.id%>/chakras" method ="POST"> 
+          <select name=“chakraId”>
+            <%- chakras.map(c =>
+              `<option value=“${c._id}“>${c.name}</option>`
+            ).join('') %>
+          </select>
+          <button type=“submit”>Add to Chakras</button>
+        </form>
+        <form action="/crystals/<%=crystal.id%>?_method=DELETE" method ="POST"> 
+          <button>Delete Crystal</button>
+        </form>
+        </div>
+      </div>
+    </body>
+    </html>
